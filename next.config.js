@@ -1,0 +1,23 @@
+const withCSS = require('@zeit/next-css')
+
+module.exports = {
+    cssModules: true,
+    webpack: config => {
+        let { rules } = config.module
+        rules.push(
+            {
+                test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+                loader: 'file-loader',
+                options:
+                {
+                    outputPath: 'static/webfonts/',
+                    publicPath: '../webfonts/',
+                    // optional, just to prettify file names
+                    name: '[name].[ext]',
+                },
+            },
+            // ...
+        );
+        return config;
+    },
+}

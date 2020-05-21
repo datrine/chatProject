@@ -1,0 +1,29 @@
+.ulBar {
+    display: inline-block;
+    padding: 0;
+}
+
+.right {
+    composes: ulBar;
+
+    /**/
+    position: absolute;
+     right:0;
+}
+
+.ulBar li {
+    display: inline;
+    margin-right: 10px;
+}
+
+
+.ulBar li a{
+    text-decoration: none;
+    font-size: large;
+}
+
+
+.ulBar li a:hover{
+    text-decoration: none;
+    color: red;
+}
